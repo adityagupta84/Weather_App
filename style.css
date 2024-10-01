@@ -1,0 +1,272 @@
+/* General Styles */
+body {
+  background: linear-gradient(135deg, #4A00E0 0%, #8E2DE2 100%);
+  /* Adds a gradient background */
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-areas:
+    'search'
+    'current'
+    'hourly'
+    'fiveday'
+    'feelslike'
+    'humidity';
+  grid-gap: 20px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 2s ease-in-out;
+  /* Fade-in animation */
+}
+
+/* Search Box */
+#search {
+  grid-area: search;
+  width: 100%;
+  padding: 15px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1.2s ease-in-out;
+  /* Fade-in animation */
+  transition: transform 0.4s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+}
+
+#search:hover {
+  transform: scale(1.1);
+  /* Slightly enlarges on hover */
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
+  /* Enhances shadow on hover */
+}
+
+input[type="search"]::placeholder {
+  color: #999;
+}
+
+datalist {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+/* Current Forecast */
+#current-forecast {
+  grid-area: current;
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  animation: slideIn 1s ease-out;
+  /* Slide-in animation */
+}
+
+#current-forecast h1 {
+  font-size: 2.5rem;
+}
+
+#current-forecast p {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+/* Hourly Forecast */
+#hourly-forecast {
+  grid-area: hourly;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  overflow-x: auto;
+  animation: fadeIn 1.5s ease-in-out;
+  /* Fade-in animation */
+}
+
+.hourly-container {
+  display: flex;
+  gap: 20px;
+}
+
+.hourly-container article {
+  text-align: center;
+  min-width: 70px;
+  transition: transform 0.3s ease;
+  /* Adds smooth transition */
+}
+
+.hourly-container article:hover {
+  transform: scale(1.1);
+  /* Slightly enlarges on hover */
+}
+
+.hourly-container .time {
+  font-size: 1.2rem;
+}
+
+.hourly-container .hourly-temp {
+  font-size: 1.5rem;
+  margin-top: 5px;
+}
+
+/* Five-Day Forecast */
+#five-day-forecast {
+  grid-area: fiveday;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  animation: slideUp 1s ease-out;
+  /* Slide-up animation */
+}
+
+.five-day-forecast-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 20px;
+}
+
+.five-day-forecast-container article {
+  text-align: center;
+  transition: transform 0.3s ease;
+  /* Adds smooth transition */
+}
+
+.five-day-forecast-container article:hover {
+  transform: scale(1.1);
+  /* Slightly enlarges on hover */
+}
+
+.five-day-forecast-container h3 {
+  font-size: 1.2rem;
+}
+
+.five-day-forecast-container .icon {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.five-day-forecast-container .min-temp,
+.five-day-forecast-container .max-temp {
+  font-size: 1.2rem;
+}
+
+/* Feels-like */
+#feels-like {
+  grid-area: feelslike;
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1.2s ease-in-out;
+  /* Fade-in animation */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+#feels-like:hover {
+  transform: scale(1.1);
+  /* Slightly enlarges on hover */
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
+  /* Enhances shadow on hover */
+}
+
+
+
+#feels-like h1 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+#feels-like p {
+  font-size: 2rem;
+  margin: 0;
+}
+
+/* Humidity */
+#humidity {
+  grid-area: humidity;
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1.2s ease-in-out;
+  /* Fade-in animation */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+#humidity:hover {
+  transform: scale(1.1);
+  /* Slightly enlarges on hover */
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
+  /* Enhances shadow on hover */
+}
+
+
+
+#humidity h1 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+#humidity p {
+  font-size: 2rem;
+  margin: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
